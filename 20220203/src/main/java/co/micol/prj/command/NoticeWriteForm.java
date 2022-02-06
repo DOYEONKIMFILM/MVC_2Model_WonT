@@ -1,0 +1,15 @@
+package co.micol.prj.command;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import co.micol.prj.comm.Command;
+
+public class NoticeWriteForm implements Command {
+
+	public String exec(HttpServletRequest request, HttpServletResponse response) {
+		// 글 쓰기 폼 호출
+		return "notice/noticeWriteForm";
+	}
+
+}
