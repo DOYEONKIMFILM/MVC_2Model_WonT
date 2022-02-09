@@ -10,6 +10,7 @@
 		<result property="password" column="password"/>
 		<result property="address" column="address"/>
 		<result property="startDate" column="start_date"/>
+		<result property="authority" column="authority" />
 	</resultMap>
 	
 	<select id="memberSelectList" resultMap="memberMap">
@@ -25,15 +26,11 @@
 	
 	<insert id="memberInsert" parameterType="com.yeon.cvd.member.service.Covid19MemberVO">
 		insert into covid19_member
-		values(#{name}, #{birthday}, #{gender}, #{phoneNumber}, #{password}, #{address}, sysdate)
+		values(#{name}, #{birthday}, #{gender}, #{phoneNumber}, #{password}, #{address}, sysdate, #{authority})
 	</insert>
 	<update id="memberUpdate"></update>
 	<delete id="memberDelete"></delete>
 	
-	<select id="isPhoneNumberCheck" parameterType="String" resultType="boolean">
-		SELECT CASE WHEN COUNT(*) = 1 THEN 0 ELSE 1 END AS T
-		FROM COVID19_MEMBER WHERE PHONE_NUMBER = #{phoneNumber}
-	</select>
 	
 	
 </mapper>

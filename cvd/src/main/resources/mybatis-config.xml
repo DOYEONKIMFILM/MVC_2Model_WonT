@@ -25,5 +25,7 @@
   
   <mappers>
     <mapper resource="com/yeon/cvd/member/service/Covid19member-map.xml"/>
+    <mapper resource="com/yeon/cvd/notice/service/notice-map.xml"/>
+    <mapper resource="com/yeon/cvd/record/service/record-map.xml"/>
   </mappers>
 </configuration>

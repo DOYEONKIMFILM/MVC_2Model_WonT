@@ -18,6 +18,5 @@ public interface Covid19MemberMapper {
 	// 회원 삭제 D
 	int memberDelete(Covid19MemberVO vo);
 
-	// 아이디 중복 체크
-	boolean isPhoneNumberCheck(String phoneNumber);
+	
 }

@@ -8,6 +8,7 @@ public class Covid19MemberVO {
 	private String password;
 	private String address;
 	private String startDate;
+	private String authority;
 	
 	
 	public String getName() {
@@ -52,11 +53,19 @@ public class Covid19MemberVO {
 	public void setStartDate(String startDate) {
 		this.startDate = startDate;
 	}
-	
+	public String getAuthority() {
+		return authority;
+	}
+	public void setAuthority(String authority) {
+		this.authority = authority;
+	}
 	@Override
 	public String toString() {
 		return "Covid19MemberVO [name=" + name + ", birthday=" + birthday + ", gender=" + gender + ", phoneNumber="
-				+ phoneNumber + ", password=" + password + ", address=" + address + ", startDate=" + startDate + "]";
+				+ phoneNumber + ", password=" + password + ", address=" + address + ", startDate=" + startDate
+				+ ", authority=" + authority + "]";
 	}
+	
+
 		
 }

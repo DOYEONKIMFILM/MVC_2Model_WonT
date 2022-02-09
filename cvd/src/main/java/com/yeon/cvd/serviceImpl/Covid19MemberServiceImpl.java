@@ -38,9 +38,4 @@ public class Covid19MemberServiceImpl implements Covid19MemberService{
 		return map.memberDelete(vo);
 	}
 
-	@Override
-	public boolean isPhoneNumberCheck(String phoneNumber) {
-		return map.isPhoneNumberCheck(phoneNumber);
-	}
-
 }

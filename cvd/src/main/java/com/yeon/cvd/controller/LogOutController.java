@@ -15,10 +15,9 @@ public class LogOutController implements Command {
 		
 		String name = (String) session.getAttribute("name");
 		
-		request.setAttribute("message", name + "님 로그아웃 되었습니다.");
 		session.invalidate(); //session 객체제거
 		
-		return "covid19member/memberLogout";
+		return "main/main";
 	}
 
 }
