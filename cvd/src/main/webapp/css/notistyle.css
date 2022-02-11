@@ -218,12 +218,13 @@
 
 
 /*** Date Picker ***/
+
 .bootstrap-datetimepicker-widget.bottom {
     top: auto !important;
 }
 
 .bootstrap-datetimepicker-widget .table * {
-    border-bottom-width: 0px;
+    border-bottom-width: 50px;
 }
 
 .bootstrap-datetimepicker-widget .table th {

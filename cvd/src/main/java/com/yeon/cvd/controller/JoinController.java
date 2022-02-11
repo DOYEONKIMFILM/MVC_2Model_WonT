@@ -12,6 +12,9 @@ public class JoinController implements Command {
 
 	@Override
 	public String run(HttpServletRequest request, HttpServletResponse response) {
+		response.setContentType("application/x-www-form-urlencoded; charset=UTF-8"); 
+		String path = "";
+		
 		// 회원가입
 		Covid19MemberService covid19memberDAO = new Covid19MemberServiceImpl();
 		Covid19MemberVO vo = new Covid19MemberVO();
@@ -32,7 +35,7 @@ public class JoinController implements Command {
 		} else {
 			request.setAttribute("message", "Error");
 		}
-		return "covid19member/memberJoinResult";
+		return "main/main";
 	}
 
 }

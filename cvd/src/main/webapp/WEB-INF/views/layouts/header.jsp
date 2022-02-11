@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+	pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -40,66 +40,59 @@
 </head>
 
 
-<body>  
-  <div class="hero_area">
-  	<div class="hero_bg_box">
-      <img src="images/hero-bg.png" alt="">
-    </div>
-    
- <!-- header section strats -->
-    <header class="header_section"">
-      <div class="container">
-        <nav class="navbar navbar-expand-lg custom_nav-container ">
-          <a class="navbar-brand" href="index.jsp">
-            <span>
-              COVID-19
-            </span>
-          </a>
+<body>
+	<div class="hero_area">
+		<div class="hero_bg_box">
+			<img src="images/hero-bg.png" alt="">
+		</div>
 
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class=""> </span>
-          </button>
+		<!-- header section strats -->
+		<header class="header_section"">
+			<div class="container">
+				<nav class="navbar navbar-expand-lg custom_nav-container">
+					<a class="navbar-brand" href="index.jsp"> <span>
+							COVID-19 </span>
+					</a>
 
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav">
-              <li class="nav-item active">
-                <a class="nav-link" href="main.do">Home <span class="sr-only">(current)</span></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="noticeList.do">Notice</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Covid-19 live</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Home delivery</a>
-              </li> 
-              <li class="nav-item">
-              	<c:if test="${not empty phoneNumber }">
-                	<a class="nav-link" href="recordList.do">Symptom Record</a>
-                </c:if>
-              </li>
-              
-              <li class="nav-item">
-              	<c:if test="${empty phoneNumber }">
-					<a class="nav-link" href="loginForm.do">Login</a>
-				</c:if>
-			   </li>
-			  <li class="nav-item">
-				<c:if test="${not empty phoneNumber }">
-					<a class="nav-link" href="logout.do">Logout</a>
-				</c:if>
-              </li>
-              <form class="form-inline">
-                <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
-                  <i class="fa fa-search" aria-hidden="true"></i>
-                </button>
-              </form>
-            </ul>
-          </div>
-        </nav>
-      </div>
-    </header>
-  	<!-- end header section -->
+					<button class="navbar-toggler" type="button" data-toggle="collapse"
+						data-target="#navbarSupportedContent"
+						aria-controls="navbarSupportedContent" aria-expanded="false"
+						aria-label="Toggle navigation">
+						<span class=""> </span>
+					</button>
+
+					<div class="collapse navbar-collapse" id="navbarSupportedContent">
+						<ul class="navbar-nav">
+							<li class="nav-item active"><a class="nav-link"
+								href="main.do">Home <span class="sr-only">(current)</span></a></li>
+							<li class="nav-item"><a class="nav-link"
+								href="noticeList.do">Notice</a></li>
+							<li class="nav-item"><a class="nav-link" href="covidchart.do">Covid-19
+									live</a></li>
+							<li class="nav-item"><c:if test="${not empty phoneNumber }">
+									<a class="nav-link" href="homeDeliveryPage.do">Home
+										delivery</a>
+								</c:if></li>
+							<li class="nav-item"><c:if test="${not empty phoneNumber }">
+									<a class="nav-link" href="recordList.do">Symptom Record</a>
+								</c:if></li>
+
+							<li class="nav-item"><c:if test="${empty phoneNumber }">
+									<a class="nav-link" href="loginForm.do">Login</a>
+								</c:if></li>
+							<li class="nav-item"><c:if test="${not empty phoneNumber }">
+									<a class="nav-link" href="logout.do">Logout</a>
+								</c:if></li>
+							<form class="form-inline">
+								<button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
+									<i class="fa fa-search" aria-hidden="true"></i>
+								</button>
+							</form>
+						</ul>
+					</div>
+				</nav>
+			</div>
+		</header>
+		<!-- end header section -->
 </body>
 </html>

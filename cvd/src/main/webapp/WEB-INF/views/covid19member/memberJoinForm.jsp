@@ -14,8 +14,8 @@
 			<div>
 				<table border="1">
 					<tr>
-						<th width="100">아이디</th>
-						<td width="150"><input type="text" id="id" name="id"></td>
+						<th width="100">이름</th>
+						<td width="150"><input type="text" id="name" name="name"></td>
 					</tr>
 					<tr>
 						<th width="100">비밀번호</th>

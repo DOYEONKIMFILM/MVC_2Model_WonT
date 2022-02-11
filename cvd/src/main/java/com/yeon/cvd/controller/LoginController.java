@@ -15,10 +15,10 @@ public class LoginController implements Command {
 
 	@ResponseBody
 	@Override
-	public String run(HttpServletRequest request, HttpServletResponse response) {
+	public String run(HttpServletRequest request, HttpServletResponse response) {	
 		response.setContentType("application/x-www-form-urlencoded; charset=UTF-8"); 
 		String path = "";
-
+		
 		// 로그인 기능
 		Covid19MemberService covid19memberDAO = new Covid19MemberServiceImpl();
 		Covid19MemberVO vo = new Covid19MemberVO();
@@ -41,7 +41,6 @@ public class LoginController implements Command {
 		} else {
 			path = "ajax:1";
 		}
-
 		return path;
 	}
 }

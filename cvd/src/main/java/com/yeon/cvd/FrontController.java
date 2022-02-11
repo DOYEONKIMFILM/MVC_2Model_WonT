@@ -13,6 +13,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.yeon.cvd.common.Command;
+import com.yeon.cvd.controller.CovidChart;
+import com.yeon.cvd.controller.HomeDeliveryPage;
 import com.yeon.cvd.controller.JoinController;
 import com.yeon.cvd.controller.JoinFormController;
 import com.yeon.cvd.controller.LogOutController;
@@ -67,7 +69,13 @@ public class FrontController extends HttpServlet {
 		map.put("/recordWriteForm.do", new RecordWriteForm());
 		map.put("/recordWrite.do", new RecordWrite());
 		map.put("/recordDelete.do", new RecordDelete());
-	}
+		
+		// 홈배달 서비스
+		map.put("/homeDeliveryPage.do", new HomeDeliveryPage());
+		
+		// 코로나 확진 api 요청
+		map.put("/covidchart.do", new CovidChart());
+		}
 
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {

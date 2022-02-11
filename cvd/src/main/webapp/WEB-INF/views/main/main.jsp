@@ -75,9 +75,12 @@
                       재택 치료자와 공동 격리자를 위한 24시간 홈배달 서비스 입니다<br>
                     </p>
                     <div class="btn-box">
-                      <a href="" class="btn1">
-                        바로가기
-                      </a>
+                    <c:if test="${empty phoneNumber }">
+                      <a href="" class="btn1">바로가기</a>
+                     </c:if>
+                     <c:if test="${not empty phoneNumber }">
+                      <a href="homeDeliveryPage.do" class="btn1">바로가기</a>
+                     </c:if>
                     </div>
                   </div>
                 </div>
@@ -224,7 +227,7 @@
           </div>
         </div>
         <div class="btn-box">
-          <a href="#">
+          <a href="noticeList.do">
             Read More
           </a>
         </div>
