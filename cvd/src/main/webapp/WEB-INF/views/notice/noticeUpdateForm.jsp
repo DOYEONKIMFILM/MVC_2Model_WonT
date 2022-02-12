@@ -18,7 +18,7 @@
 								<div class="card">
 									<form id="frm" action="noticeUpdate.do" method="post">
 										<div class="card-body">
-											<h4 class="card-title">공지사항 등록하기</h4>
+											<h4 class="card-title">공지사항 수정</h4>
 											<p class="card-description">공지에 필요한 자료를 꼼꼼하게 검토 한 후 입력
 												해주시기바랍니다</p>
 
