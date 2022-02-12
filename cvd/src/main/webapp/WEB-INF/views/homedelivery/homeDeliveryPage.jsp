@@ -42,8 +42,7 @@
 </head>
 
 <body>
-	<div
-		style="margin: 0px auto; width: 100%; padding: 20px; background-color: White; align: center;">
+	<div style="margin: 0px auto; width: 100%; padding: 20px; background-color: White; align: center;">
 
 		<!-- Featured Section Begin -->
 		<section class="featured spad">
@@ -53,8 +52,9 @@
 						<div class="section-title">
 							<h2>Home Delivery</h2>
 						</div>
+							
 						<div class="featured__controls"
-							style="text-align: center; height: 35px; background-color: #E6FFE6;">
+							style="text-align: center; height: 35px; background-color: #F5F5F5;">
 							<ul>
 								<li class="active" data-filter="*">모든제품</li>
 								<li data-filter=".oranges">식자재</li>
@@ -300,7 +300,7 @@
 		<!-- Featured Section End -->
 
 		<div class="featured__controls"
-			style="text-align: center; height: 60px; background-color: #EBFFEB;">
+			style="text-align: center; height: 60px; background-color: #F5F5F5;">
 		</div>
 		<!-- Categories Section Begin -->
 		<section class="categories">
