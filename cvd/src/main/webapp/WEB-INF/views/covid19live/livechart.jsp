@@ -3,51 +3,104 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 
-<!-- Bootstrap -->
-<link href="chart/bootstrap/dist/css/bootstrap.min.css"
-	rel="stylesheet">
-<!-- Font Awesome -->
-<link href="chart/font-awesome/css/font-awesome.min.css"
-	rel="stylesheet">
 
-<!-- Custom Theme Style -->
-<link href="css/custom.min.css" rel="stylesheet">
+
+<script>
+let data = '';
+const titles = ['지역명', '확진자수', '사망자수'];
+const fields = ['gubun', 'defCnt', 'deathCnt'];
+
+//<thead>
+function makeHead() {
+	let thd = document.createElement('thead');
+	let tr = document.createElement('tr')
+	
+	// 배열 갯수만큼 만들어주는 필드영역
+	titles.forEach(function(field) {
+		let th = document.createElement('th')
+		let text = document.createTextNode(field);
+		th.appendChild(text);
+		tr.appendChild(th);
+	});
+	thd.appendChild(tr);
+	return thd;
+}
+
+function makeBody() {
+	let tbd = document.createElement('tbody');
+	data.forEach(function(obj) {
+		tbd.appendChild(makeTr(obj));
+	});
+	return tbd;
+}
+
+//tr 생성
+function makeTr(item) {
+	let tr = document.createElement('tr');
+	
+	// 데이터 영역
+	for (let field of fields) {
+		let td = document.createElement('td');
+		let text = document.createTextNode(item[field]);
+		td.appendChild(text);
+		tr.appendChild(td);
+	}
+	return tr;
+}
+(function() {
+	// Ajax 호출
+	var xhr = new XMLHttpRequest();
+		var url = 'http://openapi.data.go.kr/openapi/service/rest/Covid19/getCovid19SidoInfStateJson'; /*URL*/
+		var queryParams = '?' + encodeURIComponent('serviceKey') + '=' + 'cPxVAevbvzOS3Sb3NJOODLtLTflfaVUO1Aw922Wwz3HhvL8iwd1v6bRrkbBNyY1x1RQTINgW0dgsmOq1aHkaCA%3D%3D'; /*Service Key*/
+			queryParams += '&' + encodeURIComponent('pageNo') + '=' + encodeURIComponent('1'); /**/
+			queryParams += '&' + encodeURIComponent('numOfRows') + '=' + encodeURIComponent('10'); /**/
+			queryParams += '&' + encodeURIComponent('startCreateDt') + '=' + encodeURIComponent('20220205'); /**/
+			queryParams += '&' + encodeURIComponent('endCreateDt') + '=' + encodeURIComponent('20220210'); /**/
+			xhr.open('GET', url + queryParams);
+			
+			xhr.onreadystatechange = function() {
+				
+			}
+		if (this.readyState == 4) {
+			let xmlFile = this.responseText;
+			$('document').ready(function() {
+					$.ajax({
+						url : "covidchart.do",
+						type : 'GET',
+						success : function(data) {
+						
+						$(xmlFile).find("item").each(function() {
+						var covidInfo = "지역명 : " + $(this).find("gubun").text() + "</br>"
+									+ "확진자 수 : "+ $(this).find("defCnt").text() + "</br>"
+									+ "사망자 수 : " + $(this).find("deathCnt").text() + "</br>"
+									+ "격리해제 수: " + $(this).find("isolClearCnt").text() + "</br>"
+									+ "전일대비 증감 수: " + $(this).find("incDec").text() + "</br>"
+									+ "기준일시: " + $(this).find("stdDay").text() + "</br>";
+									$('#chartdiv').append(covidInfo)
+						})
+						},	
+
+			let tbl = document.createElement('table');
+			tbl.setAttribute('border', '1');
+			tbl.appendChild(makeHead());
+			tbl.appendChild(makeBody());
+			document.getElementById('list').appendChild(tbl);
+
+		}
+	}
+	
+		xhr.send('');
+	
+</script>
 </head>
+
 <body>
-	<div class="col-md-6 col-sm-6 col-xs-12">
-		<div class="x_panel">
-			<div class="x_title">
-				<h2>
-					Bar graph <small>Sessions</small>
-				</h2>
-				<ul class="nav navbar-right panel_toolbox">
-					<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-					</li>
-					<li class="dropdown"><a href="#" class="dropdown-toggle"
-						data-toggle="dropdown" role="button" aria-expanded="false"><i
-							class="fa fa-wrench"></i></a>
-				</ul>
-				<div class="clearfix"></div>
-			</div>
-			<div class="x_content">
-				<canvas id="mybarChart"></canvas>
-			</div>
+	<div style="width: 100%; padding: 20px; background-color: White; align: center;">
+		<div class="main-panel" style="width: 1800px;">
+			<div id="chartdiv"></div>
 		</div>
 	</div>
-	
-	
-    <!-- jQuery -->
-    <script src="chart/jquery/dist/jquery.min.js"></script>
-    <!-- Bootstrap -->
-    <script src="chart/bootstrap/dist/js/bootstrap.min.js"></script>
-    <!-- Chart.js -->
-    <script src="chart/Chart.js/dist/Chart.min.js"></script>
-    <!-- Custom Theme Scripts -->
-    <script src="chart/custom.min.js"></script>
 </body>
 </html>

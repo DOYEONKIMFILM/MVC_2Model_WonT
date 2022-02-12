@@ -7,8 +7,7 @@
 <title>noticeWriteForm.jsp</title>
 </head>
 <body>
-	<div
-		style="width: 100%; padding: 20px; background-color: White; align: center;">
+	<div style="width: 100%; padding: 20px; background-color: White; align: center;">
 		<div class="main-panel" style="width: 1800px;">
 			<div class="content-wrapper">
 				<div class="row">

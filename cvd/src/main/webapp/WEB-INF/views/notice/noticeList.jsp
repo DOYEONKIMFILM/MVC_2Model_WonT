@@ -66,10 +66,10 @@
 										<table class="table">
 											<thead class="thfontlocation">
 												<tr>
-													<th scope="col">#</th>
-													<th scope="col">제목</th>
-													<th scope="col">작성일자</th>
-													<th scope="col">조회수</th>
+													<th scope="col">　#</th>
+													<th scope="col">　　　　　　　　　　　　　　　　　　제목　</th>
+													<th scope="col">　　　　　작성일자</th>
+													<th scope="col">　　조회수</th>
 												</tr>
 											</thead>
 											<tbody>
