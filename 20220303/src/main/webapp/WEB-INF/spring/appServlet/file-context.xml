@@ -2,14 +2,13 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-
-	<bean class="org.springframework.web.multipart.commons.CommonsMultipartResolver" id="commonsMultipartResolver">
-		<property name="maxUploadSize" value="1073741824" />
-		<property name="defaultEncoding" value="utf-8" />
-	</bean>
 	
-	<!-- 서버에 동작할 때는 서버경로의 상대경로 설정(루트 밑에 파일업로드) -->
+	<bean class="org.springframework.web.multipart.commons.CommonsMultipartResolver" id="multipartResolver">
+		<property name="maxUploadSize" value="100000000" />
+		<property name="maxInMemorySize" value="100000000" />
+	</bean>
+
 	<bean class="java.lang.String" id="upLoadPath">
-		<constructor-arg value="c:/dev/filetest"></constructor-arg>
+		<constructor-arg value="c:/dev/filetest" />
 	</bean>
 </beans>

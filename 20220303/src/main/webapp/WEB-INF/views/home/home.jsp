@@ -15,6 +15,7 @@
 		<a href="memberJoin.do">멤버 회원가입</a><p>
 		<a href="memberLogin.do">멤버 로그인</a><p>
 		<a href="fileUploadForm.do">파일관리</a><p>
+		<a href="fileUp.do">파일 다운로드</a>
 		
 	</div>
 </div>	

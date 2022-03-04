@@ -13,8 +13,8 @@
 	
 	
 	<insert id="memberInsert" parameterType="co.micol.prj.member.vo.MemberVO">
-		INSERT INTO MEMBER(id, password, name, tel, address, author)
-		VALUES(#{id}, #{password}, #{name}, #{tel}, #{address}, #{author})
+		INSERT INTO MEMBER
+		VALUES(#{id}, #{password}, #{name}, #{tel}, #{address}, #{author}, #{picture}, #{rpicture})
 	</insert>
 	
 	

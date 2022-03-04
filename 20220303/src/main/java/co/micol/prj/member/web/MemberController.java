@@ -1,9 +1,15 @@
 package co.micol.prj.member.web;
 
+import java.io.File;
+import java.io.IOException;
+import java.util.UUID;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.multipart.MultipartFile;
 
 import co.micol.prj.member.service.MemberService;
 import co.micol.prj.member.vo.MemberVO;
@@ -12,6 +18,9 @@ import co.micol.prj.member.vo.MemberVO;
 public class MemberController {
 	@Autowired
 	private MemberService memberDao;
+	
+	@Autowired
+	private String upLoadPath;
 
 	@RequestMapping("/memberList.do")
 	public String memberList(Model model) {
@@ -33,13 +42,25 @@ public class MemberController {
 	}
 
 	@RequestMapping("/memberInsert.do")
-	public String memberInsert(MemberVO vo) {
-		int n = memberDao.memberInsert(vo);
-
-		if (n != 0) {
-			return "redirect:memberList.do";
+	public String memberInsert(MemberVO vo, MultipartFile file) {
+		String fileName = file.getOriginalFilename();	//원본파일명
+		String id = UUID.randomUUID().toString();	//고유 유니크한 아이디
+		
+		String targetFile = id + fileName.substring(fileName.lastIndexOf(".")); //파일명 다른이름으로 저장, "."까지
+		
+		File target = new File(upLoadPath, targetFile);
+		
+		try {
+			FileCopyUtils.copy(file.getBytes(), target); //파일전송
+			targetFile = upLoadPath + File.separator + targetFile; //실제경로를 알려준다
+			vo.setPicture(fileName);	//원본 파일명
+			vo.setRpicture(targetFile);	// 변경된 파일명
+			memberDao.memberInsert(vo);	//파일 올리기 (회원가입진행)
+		
+		} catch (IOException e) {
+			e.printStackTrace();
 		}
-		return "member/memberJoin";
+		return "home/home";
 	}
 
 	@RequestMapping("/memberSelect.do")

@@ -9,7 +9,7 @@
 <body>
 <div align="center">
   <div><h1>회원가입</h1></div>
-	<form id="jofrm" action="memberInsert.do" method="post">
+	<form id="jofrm" action="memberInsert.do" method="post" enctype="multipart/form-data">
 	<div>
 		<table border="1">
 			<tr>
@@ -34,7 +34,11 @@
 			</tr>
 			<tr>
 				<th width="120">권한</th>
-				<td width="170"><input type="text" id="author" name="author" value="user" readonly="readonly"></td>
+				<td width="170"><input type="text" id="author" name="author" value="USER" readonly="readonly"></td>
+			</tr>
+			<tr>
+				<th width="120">사진</th>
+				<td width="170"><input type="file" id="file" name="file"></td>
 			</tr>
 		</table>
 	</div><br>

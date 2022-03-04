@@ -14,7 +14,8 @@
 	
 	<insert id="filerepoInsert">
 	<selectKey keyProperty="id" resultType="int" order="BEFORE">
-		SELECT MAX(ID) + 1 AS ID FROM FILEREPO
+		SELECT CASE WHEN MAX(ID) IS NULL THEN 1 ELSE MAX(ID) + 1 END AS ID
+		FROM FILEREPO
 	</selectKey>
 		INSERT INTO FILEREPO
 		VALUES(#{id}, #{writer}, #{enterDate}, #{fname}, #{rname})
