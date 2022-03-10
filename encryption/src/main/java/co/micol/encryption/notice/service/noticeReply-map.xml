@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="co.micol.encryption.notice.service.NoticeReplyMapper">
+	<select id="noticeReplySelectList" resultType="co.micol.encryption.notice.vo.NoticeReplyVO">
+		SELECT REPLYNO, NOTICE_ID, REPLYID, REPLYCONTENTS
+		FROM NOTICEREPLY
+		WHERE NOTICE_ID=#{notice_id}
+		ORDER BY REPLYNO
+	</select>
+	
+	<insert id="noticeReplyInsert" parameterType="co.micol.encryption.notice.vo.NoticeReplyVO">
+		INSERT INTO NOTICEREPLY(REPLYNO, NOTICE_ID, REPLYID, REPLYCONTENTS)
+		VALUES (REPLY_SEQ.NEXTVAL, #{notice_id}, #{replyId}, #{replyContents})
+	</insert>
+	
+	<update id="noticeReplyUpdate" parameterType="co.micol.encryption.notice.vo.NoticeReplyVO">
+		UPDATE NOTICEREPLY
+		<set>
+			<if test="replyContents!=null">replyContents=#{replyContents},</if>
+		</set>
+		WHERE REPLYNO=#{replyNo}
+	</update>
+	
+	<delete id="noticeReplyDelete" parameterType="co.micol.encryption.notice.vo.NoticeReplyVO">
+		DELETE FROM NOTICEREPLY
+		WHERE REPLYNO=#{replyNo}
+	</delete>
+	
+	<select id="noticeReplyselectNo" resultType="co.micol.encryption.notice.vo.NoticeReplyVO">
+		SELECT MAX(REPLYNO) AS REPLYNO
+		FROM NOTICEREPLY
+	</select>
+</mapper>
