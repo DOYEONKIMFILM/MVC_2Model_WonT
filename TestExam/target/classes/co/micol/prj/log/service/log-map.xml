@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="co.micol.prj.log.service.LogMapper">
+	<select id="seletLogList"
+		resultType="co.micol.prj.log.service.LogVO">
+		SELECT LOGID, ID, ACTION, TO_CHAR(LOGTIME, 'YYYY-MM-DD
+		HH24:MI:SS') AS LOGTIME
+		FROM LOGTABLE
+		WHERE LOGDATE BETWEEN #{startDate}
+		and SYSDATE
+	</select>
+
+
+	<insert id="insertLog"
+		parameterType="co.micol.prj.log.service.LogVO">
+	<selectKey keyProperty="logId" resultType="int" order="BEFORE">
+      SELECT MAX(LOGID) +1 AS LOGID FROM LOGTABLE
+   </selectKey>
+      INSERT INTO LOGTABLE
+      VALUES(#{logId},#{id},#{action},sysdate) 
+   </insert>
+
+</mapper>
