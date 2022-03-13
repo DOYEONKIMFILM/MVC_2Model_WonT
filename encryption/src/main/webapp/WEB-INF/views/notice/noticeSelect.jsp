@@ -36,7 +36,12 @@
                   <textarea rows="7" cols="155">${notice.noticeSubject }</textarea>
                </td>
             </tr>
-         </table>
+         </table><br>
+         
+         <div>
+         	<button id="btn" onclick="deleteFnc('${notice.noticeWriter }')">삭제</button>
+         </div>
+         
       </div>
       <br>
       <div id="wrap">
@@ -117,6 +122,24 @@
        
          //event.target.parentElement.parenElement.remove();
     } 
+    
+    /* 삭제 함수(아작스 사용)*/
+    function deleteFnc(name) {
+		$.ajax ({
+			url : "ajaxDel.do",
+			type : "post",
+			dataType : "json",
+			data : {"noticeId" : ${notice.noticeId}},
+			success : function (a) {
+				console.log(a);
+				if (a != 0) {
+					
+				}
+			}
+		});
+		alert(name + "님의 게시글이 삭제 되었습니다.");
+		location.href="noticeList.do";
+	}
    </script>
 </body>
 </html>

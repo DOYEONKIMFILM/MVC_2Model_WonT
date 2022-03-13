@@ -49,4 +49,11 @@ public class NoticeRestController {
 	public List<NoticeVO> ajaxNoticeSort(@RequestParam("key") String key, @RequestParam("val") int val) {
 		return noticeDao.noticeSelectListSort(key, val);
 	}
+	
+	@PostMapping("/ajaxDel.do")
+	public int ajaxDel(NoticeVO vo) {
+		int n = noticeDao.noticeDelete(vo);
+		
+		return n;
+	}
 }

@@ -1,10 +1,13 @@
 package co.micol.encryption.notice.web;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import co.micol.encryption.notice.service.NoticeReplyService;
 import co.micol.encryption.notice.service.NoticeService;
@@ -33,6 +36,12 @@ public class NoticeController {
 		model.addAttribute("notice", vo);
 		model.addAttribute("replys", replyDao.noticeReplySelectList(rvo));
 		return "notice/noticeSelect";
+	}
+	
+	@PostMapping("/ajaxtest.do")
+	@ResponseBody
+	public List<NoticeVO> ajaxtest() {
+		return noticeDao.noticeSelectList();
 	}
 
 }

@@ -68,7 +68,8 @@
 					</tr>
 				</thead>
 				<tbody id="body">
-					<c:forEach items="${notices}" var="notice">
+					<%-- 밑부분 아작스로 호출
+					 <c:forEach items="${notices}" var="notice">
 						<tr onclick="searchNotice('${notice.noticeId}')">
 							<td align="center">${notice.noticeId}</td>
 							<td align="center">${notice.noticeWriter}</td>
@@ -76,7 +77,7 @@
 							<td align="center">${notice.noticeDate}</td>
 							<td align="center">${notice.noticeHit}</td>
 						</tr>
-					</c:forEach>
+					</c:forEach> --%>
 				</tbody>
 			</table>
 			<div>
@@ -177,6 +178,56 @@
 			}
 			
 		}
+		
+		/* 매개변수를 담을떄
+		function searchNotice(id){
+			$.ajax ({
+				url : "ajaxtest.do",
+				data : {"noticeId" : id },
+				dataType : "json",
+				type : ,
+				success : function(result) {
+					console.log(result);
+				}
+		} */
+		
+		/* 전체조회 */
+		$.ajax ({
+			url : "ajaxtest.do",
+			dataType : "json",
+			type : "post",
+			success : function(aa) {
+				console.log(aa);
+				
+				ajaxList(aa);
+			}
+		});
+		
+		function ajaxList(aa) {
+			$.each(aa, function(idx, item){
+				let tr = $("<tr>");
+				
+				tr.attr({
+					"onmouseover" : "this.style.background = 'yellow'",
+					"onmouseleave" : "this.style.background = ''",
+					"onclick" : "searchNotice('" + item.noticeId + "')"
+				}).append(
+						$("<td align='center'>").text(item.noticeId),
+						$("<td align='center'>").text(item.noticeWriter),
+						$("<td align='center'>").text(item.noticeTitle),
+						$("<td align='center'>").text(item.noticeDate),
+						$("<td align='center'>").text(item.noticeHit)
+				);
+				
+				$("#body").append(tr);
+				
+				
+			});
+			
+	
+			
+		}
+		
 	</script>
 </body>
 </html>
