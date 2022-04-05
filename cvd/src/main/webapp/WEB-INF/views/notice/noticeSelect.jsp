@@ -28,12 +28,12 @@
 										<div class="form-group">
 											<label for="exampleInputName1">작성일자</label> <input
 												type="text" class="form-control" id="exampleInputName1"
-												value=${notice.noticeDate } readonly>
+												value="${notice.noticeDate }" readonly>
 										</div>
 										<div class="form-group">
 											<label for="exampleInputEmail3">조회수</label> <input
 												type="text" class="form-control" id="exampleInputEmail3"
-												value=${notice.noticeHit } readonly>
+												value="${notice.noticeHit }" readonly>
 										</div>
 										<div class="form-group">
 											<label for="exampleInputPassword4">제목</label> <input
