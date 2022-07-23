@@ -1,23 +1,20 @@
 # 📌COVICD-19 재택관리
-> COVID-19에 감염된 재택치료자가 안전하게 완치 할 수 있도록 돕는 관리 웹서비스
+> COVID-19에 감염된 재택치료자의 안전과 편의를 위한 시스템
 
-[![NPM Version][npm-image]][npm-url]
-[![Build Status][travis-image]][travis-url]
-[![Downloads Stats][npm-downloads]][npm-url]
-
-한 두 문단으로 프로젝트 소개 글을 작성합니다.
+• 재택치료자가 매일 증상을 기록
+• 격리된 재택치료자에게 안전성을 제공 / 24시간 식자재, 생필품, 약 배달
 
 ![](../header.png)
 
 ## 🛠 개발 환경
 
-•Eclipse  
-•Intellij  
-•MVC Model2  
-•Java  
-•JSP  
-•JavaScript  
-•Html  
+• Eclipse  
+• Intellij  
+• MVC Model2  
+• Java  
+• JSP  
+• JavaScript  
+• Html  
 • CSS  
 • MyBatis  
 • Ajax  
@@ -25,10 +22,10 @@
 
 ## 💡 오픈소스 & 라이브러리
 
-서울시 공공데이터 API  
-Chart.Js  
-Bootstrap  
-jQuery
+• 서울시 공공데이터 API  
+• Chart.Js  
+• Bootstrap  
+• jQuery
 
 ## 📆 개발기간
 
