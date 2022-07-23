@@ -11,23 +11,23 @@
 
 ## 🛠 개발 환경
 
-Eclipse
-Intellij
-MVC Model2
-Java
-JSP
-JavaScript
-Html
-CSS
-MyBatis
-Ajax
-Oracle
+•Eclipse  
+•Intellij  
+•MVC Model2  
+•Java  
+•JSP  
+•JavaScript  
+•Html  
+• CSS  
+• MyBatis  
+• Ajax  
+• Oracle  
 
 ## 💡 오픈소스 & 라이브러리
 
-서울시 공공데이터 API
-Chart.Js
-Bootstrap
+서울시 공공데이터 API  
+Chart.Js  
+Bootstrap  
 jQuery
 
 ## 📆 개발기간
