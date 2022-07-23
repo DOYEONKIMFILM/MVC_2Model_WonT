@@ -1,5 +1,5 @@
 # 📌COVICD-19 재택관리
-> 2022.02.06 ~ 2022.02.13
+> COVID-19에 감염된 재택치료자가 안전하게 완치 할 수 있도록 돕는 관리 웹서비스
 
 [![NPM Version][npm-image]][npm-url]
 [![Build Status][travis-image]][travis-url]
@@ -9,23 +9,30 @@
 
 ![](../header.png)
 
-## 개발 환경
+## 🛠 개발 환경
 
-OS X & 리눅스:
+Eclipse
+Intellij
+MVC Model2
+Java
+JSP
+JavaScript
+Html
+CSS
+MyBatis
+Ajax
+Oracle
 
-```sh
-npm install my-crazy-module --save
-```
+## 💡 오픈소스 & 라이브러리
 
-윈도우:
+서울시 공공데이터 API
+Chart.Js
+Bootstrap
+jQuery
 
-```sh
-edit autoexec.bat
-```
+## 📆 개발기간
 
-## 사용 예제
-
-스크린 샷과 코드 예제를 통해 사용 방법을 자세히 설명합니다.
+2022.02.06 ~ 2022.02.13
 
 _더 많은 예제와 사용법은 [Wiki][wiki]를 참고하세요._
 
