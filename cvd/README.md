@@ -1,6 +1,7 @@
 # 📌COVICD-19 재택관리
-> COVID-19에 감염된 재택치료자의 안전을 위한 관리 시스템
+> COVID-19 재택치료자의 안전을 위한 관리시스템
 ![](../ddddddddddddddddd23.png)
+![ddddddddddddddddd23](https://user-images.githubusercontent.com/94347484/180626617-07b21e7a-ca88-45bb-b758-13032498ef92.png)
 
 ## 🛠 개발 환경
 
